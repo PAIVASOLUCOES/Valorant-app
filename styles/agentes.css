@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url(/styles/navEMenuMobile.css);
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: 100vh;
+    background: #0F1923;
+}
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+li,
+a,
+ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#start {
+    margin-bottom: 8%;
+}
+
+.nav {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 25px;
+    padding-top: 15px;
+
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#container-cards {
+    display: flex;
+    gap: 20px;
+
+}
+
+
+.container-setas {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 5px;
+    margin-left: 25%;
+    margin-top: 5px;
+}
+
+.container-setas img {
+    width: 40px;
+}
+
+.info-agentes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.container-imagemAgente {
+    margin-bottom: 5%;
+
+}
+
+.btn-information a {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-weight: bold;
+}
+
+.title-agentes {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    margin-bottom: 2%;
+}
+
+.btn-information {
+    border: none;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    background: #FF4655;
+    width: 35%;
+    padding: 5px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.span-name {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    width: 100%;
+    background: #111111;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    position: absolute;
+    bottom: 0;
+}
+
+.creditos {
+    margin-left: 5%;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    margin-right: 5%;
+
+}
+
+
+.container-iniciarSessao {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    color: #fff;
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    transform: translateX(-125%);
+    transition: all 0.5s ease;
+
+}
+
+.janela-sessao {
+    display: flex;
+    flex-direction: column;
+    background: #0F1923;
+    width: 60%;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+
+}
+
+
+
+.btn-closeLogin {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+
+}
+
+
+.container-iniciarSessao.active {
+    z-index: 3;
+    transform: translateX(0);
+}
+
+.title {
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.logins-riot {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+
+}
+
+.criar-conta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.fazer-login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.btn-login,
+.btn-criarConta {
+    outline: none;
+    border: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    padding: 15px;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15%;
+
+}
+
+#container-cards {
+    margin-bottom: 25px;
+}
+
+
+.fazer-login span,
+.criar-conta span {
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.btn-login {
+    font-weight: bold;
+    background: #FF4655;
+}
+
+
+.btn-criarConta {
+    background: #fff;
+    color: #000000;
+    font-weight: bold;
+
+}
+
+#slide-wrapper {
+    overflow-x: hidden;
+    margin-bottom: 5%;
+    background: #0F1923;
+}
+
+#slide {
+    display: flex;
+    margin: 0 20px;
+}
+
+
+.card-agentes {
+    width: 80vw;
+    flex-shrink: 0;
+    max-width: 800px;
+    margin: 0 20px;
+    margin-top: 25px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    opacity: .8;
+    transform: scale(.6);
+    transition: all .3s ease-in-out;
+
+}
+
+
+
+.card-agentes.active {
+    opacity: 1;
+    transform: scale(.8);
+}
+
+.card-agentes img {
+    height: 300px;
+
+}
+
+.container-imagemAgente {
+    display: flex;
+    justify-content: center;
+}
+
+.creditos a {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+}
+
+@media(min-width:1500px) {
+    body {
+        height: 100vh;
+    }
+
+    #container-agentes {
+        width: 57%;
+    }
+
+    li a {
+        font-size: 1.1rem;
+    }
+
+    .span-name {
+        font-size: 1.2rem;
+    }
+
+    .creditos {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media(max-width:768px) {
+    .nav {
+        margin-bottom: 5px;
+    }
+
+
+
+    .container-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .janela-sessao {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .logins-riot {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-login,
+    .btn-criarConta {
+        margin-bottom: 0;
+    }
+
+    .criar-conta,
+    .fazer-login {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-login {
+        margin-bottom: 5%;
+    }
+
+    .title {
+        margin-top: 5%;
+    }
+
+    #container-cards {
+        margin-bottom: 15px;
+    }
+}
+
+@media(max-width:768px) {
+    .container-li {
+        width: 240px;
+    }
+}
