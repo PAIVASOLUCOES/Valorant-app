@@ -9,11 +9,28 @@ body {
     background: #d2d1d1;
     height: 100vh;
     overflow-x: hidden;
+    position: relative;
 }
 
 img {
     max-width: 100%;
     display: block;
+}
+
+#container {
+    position: relative;
+    min-height: 100vh
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    width: 100%;
+    background: #111111;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
 }
 
 ul,
@@ -171,8 +188,8 @@ li a {
 
 #slide li {
     flex-shrink: 0;
-    width: 80vw;
-    max-width: 800px;
+    width: 60vw;
+    max-width: 600px;
     margin: 0 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
@@ -198,6 +215,11 @@ li a {
     color: #fff;
     letter-spacing: 4rem;
 
+}
+
+#title {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
 }
 
 #slide li.active span {
@@ -230,17 +252,6 @@ li a {
 
 
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
-    width: 100%;
-    background: #111111;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-
-}
 
 .container-footer {
     display: flex;
@@ -260,6 +271,11 @@ li a {
 
 }
 
+.slide-wrapper {
+    margin-bottom: 5%;
+}
+
+
 
 @media(min-width:1700px) {
     #slide li {
@@ -278,12 +294,15 @@ li a {
 
 
 
+
 }
 
 @media (max-width:768px) {
     body {
         overflow-x: hidden;
     }
+
+
 
     .nav {
         display: flex;

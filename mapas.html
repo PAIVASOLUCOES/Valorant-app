@@ -8,100 +8,93 @@
     <link rel="stylesheet" href="/styles/mapa.css" />
   </head>
   <body>
-    <nav class="nav">
-      <div class="left">
-        <div class="svg-logo">
-          <img src="/imgs/riot.svg" />
+    <div id="container">
+      <nav class="nav">
+        <div class="left">
+          <div class="svg-logo">
+            <img src="/imgs/riot.svg" />
+          </div>
         </div>
-      </div>
-      <div class="right">
-        <ul class="itens">
-          <li class="home">
-            <a href="/htmls/index.html" class="home hover-nav">Inicio</a>
-          </li>
-          <li class="jogue-agora">
-            <a
-              href="https://playvalorant.com/pt-br/download/"
-              class="hover-nav"
-              target="_blank"
-              >Jogue agora</a
-            >
-          </li>
-          <li class="info-jogo">
-            <a href="" class="hover-nav" id="dropdown-menu"
-              >Informações do jogo</a
-            >
+        <div class="right">
+          <ul class="itens">
+            <li class="home">
+              <a href="/htmls/index.html" class="home hover-nav">Inicio</a>
+            </li>
+            <li class="jogue-agora">
+              <a
+                href="https://playvalorant.com/pt-br/download/"
+                class="hover-nav"
+                target="_blank"
+                >Jogue agora</a
+              >
+            </li>
+            <li class="info-jogo">
+              <a href="" class="hover-nav" id="dropdown-menu"
+                >Informações do jogo</a
+              >
 
-            <div class="dropdown-info">
-              <a href="/agentes.html">Agentes</a>
-              <a href="/guns.html">Arsenal</a>
+              <div class="dropdown-info">
+                <a href="/agentes.html">Agentes</a>
+                <a href="/arsenal.html">Arsenal</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-mobile">
+          <img src="/imgs/menu_FILL0_wght400_GRAD0_opsz48.svg" />
+        </div>
+      </nav>
+      <aside class="sidebar">
+        <div class="header-side">
+          <img src="/imgs/riot.svg" />
+          <img
+            src="/imgs/close_FILL0_wght400_GRAD0_opsz48 (1).svg"
+            class="close-side"
+          />
+        </div>
+        <ul class="itens-aside">
+          <li class="dropdown-li">
+            <a href="" class="side-event side-a">Informações do jogo</a>
+            <div class="dropdown-side">
+              <a href="/arsenal.html" class="dropdown-a">Arsenal</a>
+              <a href="/agentes.html" class="dropdown-a">Agentes</a>
             </div>
           </li>
-        </ul>
-      </div>
-      <div class="menu-mobile">
-        <img src="/imgs/menu_FILL0_wght400_GRAD0_opsz48.svg" />
-      </div>
-    </nav>
-    <aside class="sidebar">
-      <div class="header-side">
-        <img src="/imgs/riot.svg" />
-        <img
-          src="/imgs/close_FILL0_wght400_GRAD0_opsz48 (1).svg"
-          class="close-side"
-        />
-      </div>
-      <ul class="itens-aside">
-        <li class="dropdown-li">
-          <a href="" class="side-event side-a">Informações do jogo</a>
-          <div class="dropdown-side">
-            <a href="/guns.html" class="dropdown-a">Arsenal</a>
-            <a href="/agentes.html" class="dropdown-a">Agentes</a>
+          <div class="container-li">
+            <li class="li-side">
+              <a href="https://playvalorant.com/pt-br/download/" class="side-a"
+                >Jogue agora</a
+              >
+            </li>
+            <li class="li-side">
+              <a href="/htmls/index.html" class="side-a">Inicio</a>
+            </li>
           </div>
-        </li>
-        <div class="container-li">
-          <li class="li-side">
-            <a href="https://playvalorant.com/pt-br/download/" class="side-a"
-              >Jogue agora</a
-            >
-          </li>
-          <li class="li-side">
-            <a href="/htmls/index.html" class="side-a">Inicio</a>
-          </li>
+        </ul>
+
+        <div class="container-btn">
+          <button class="btn-aside">Jogue gratis</button>
         </div>
-      </ul>
+      </aside>
+      <div class="slide-wrapper">
+        <h2 id="title">Mapas</h2>
+        <ul id="slide"></ul>
+      </div>
+      <footer class="footer">
+        <p class="creditos">
+          Site feito por <a href="https://github.com/Faelkk">Rafael</a>
+        </p>
+        <div class="socials">
+          <a href="https://github.com/Faelkk">
+            <img src="/imgs/iconmonstr-github-1 (1).svg"
+          /></a>
 
-      <div class="container-btn">
-        <button class="btn-aside">Jogue gratis</button>
-      </div>
-    </aside>
-    <div class="slide-wrapper">
-      <ul id="slide"></ul>
-      <div id="container-click">
-        <img
-          src="/imgs/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.svg"
-          id="prev"
-        />
-        <img
-          src="/imgs/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48.svg"
-          id="next"
-        />
-      </div>
+          <a href="https://www.instagram.com/achten.rafael/"
+            ><img src="/imgs/iconmonstr-instagram-11 (1).svg"
+          /></a>
+        </div>
+      </footer>
     </div>
-    <footer class="footer">
-      <p class="creditos">
-        Site feito por <a href="https://github.com/Faelkk">Rafael</a>
-      </p>
-      <div class="socials">
-        <a href="https://github.com/Faelkk">
-          <img src="/imgs/iconmonstr-github-1 (1).svg"
-        /></a>
-
-        <a href="https://www.instagram.com/achten.rafael/"
-          ><img src="/imgs/iconmonstr-instagram-11 (1).svg"
-        /></a>
-      </div>
-    </footer>
     <script src="/js/mapas.js" type="module"></script>
   </body>
 </html>

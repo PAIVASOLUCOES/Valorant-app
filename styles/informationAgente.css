@@ -255,12 +255,14 @@ ul {
     gap: 20px;
 
 
+
 }
 
 #icons-abilities img {
     width: 72px;
     padding: 10px;
     border: 1px solid #8d8989;
+    cursor: pointer;
 
 }
 

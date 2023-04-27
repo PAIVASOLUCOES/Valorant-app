@@ -13,6 +13,7 @@ body {
 
 
 
+
 img {
     display: block;
     max-width: 100%;
@@ -103,9 +104,9 @@ ul {
     font-family: 'Lato', sans-serif;
     color: #fff;
     background: #FF4655;
-    width: 35%;
+    width: 25%;
     padding: 5px;
-    border-radius: 2px;
+    border-radius: 1px;
     font-weight: bold;
 }
 
@@ -127,7 +128,7 @@ ul {
     font-family: 'Lato', sans-serif;
     padding-bottom: 12px;
     padding-top: 12px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
@@ -260,13 +261,15 @@ ul {
 
 #slide-wrapper {
     overflow-x: hidden;
-    margin-bottom: 5%;
+    padding-bottom: 5%;
     background: #0F1923;
+    padding-top: 5%;
 }
 
 #slide {
     display: flex;
     margin: 0 20px;
+    justify-content: center;
 }
 
 
@@ -278,17 +281,18 @@ ul {
     margin-top: 25px;
     border-radius: 3px;
     margin-bottom: 25px;
-    opacity: .8;
     transform: scale(.6);
     transition: all .3s ease-in-out;
-
+    opacity: .5;
 }
+
 
 
 
 .card-agentes.active {
     opacity: 1;
     transform: scale(.8);
+
 }
 
 .card-agentes img {
@@ -305,6 +309,12 @@ ul {
     color: #fff;
     font-family: 'Lato', sans-serif;
     cursor: pointer;
+}
+
+#title-agente {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
 }
 
 @media(min-width:1500px) {
@@ -327,6 +337,9 @@ ul {
     .creditos {
         font-size: 1.2rem;
     }
+
+
+
 
 }
 
@@ -380,5 +393,9 @@ ul {
 @media(max-width:768px) {
     .container-li {
         width: 240px;
+    }
+
+    .btn-information {
+        width: 50%;
     }
 }
