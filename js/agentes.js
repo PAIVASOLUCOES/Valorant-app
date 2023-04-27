@@ -28,7 +28,7 @@ async function criarcards() {
     const buttonAgentes = document.createElement("button");
     buttonAgentes.classList.add("btn-information");
     const link = document.createElement("a");
-    link.href = "http://127.0.0.1:5500/infoAgentes.html";
+    link.href = "/infoAgentes.html";
     link.innerHTML = "Ver mais";
     link.id = agente.uuid;
     link.addEventListener("click", () =>
