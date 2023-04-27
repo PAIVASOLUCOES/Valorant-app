@@ -342,7 +342,6 @@ li a {
     align-items: center;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: auto
 }
 
 .container-footer {
@@ -405,6 +404,11 @@ li a {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    a {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.8rem;
     }
 }
 

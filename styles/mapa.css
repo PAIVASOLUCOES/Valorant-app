@@ -12,6 +12,23 @@ body {
     position: relative;
 }
 
+::-webkit-scrollbar {
+    height: 10px;
+    width: 100%;
+    background: #fff0f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -181,22 +198,19 @@ li a {
 
 }
 
-#slide {
-    display: flex;
-    margin-bottom: 30px;
-}
+
+
 
 #slide li {
     flex-shrink: 0;
     width: 60vw;
     max-width: 600px;
-    margin: 0 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
-    opacity: .8;
-    transform: scale(.6);
+    transform: scale(.9);
     transition: .4s;
     position: relative;
+
 
 }
 
@@ -210,10 +224,9 @@ li a {
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     transition: all 0.5s ease-in-out;
-    opacity: 0;
     text-transform: uppercase;
     color: #fff;
-    letter-spacing: 4rem;
+    letter-spacing: .2rem;
 
 }
 
@@ -235,22 +248,22 @@ li a {
 
 #slide li.active {
     opacity: 1;
-    transform: scale(.9);
 }
 
 #container-click {
     display: flex;
     justify-content: center;
-    gap: 20px;
 }
 
 #container-click img {
     width: 30px;
 }
 
-
-
-
+#slide {
+    transition: all 0.3s ease-in;
+    scroll-behavior: smooth;
+    scroll-behavior: auto;
+}
 
 
 .container-footer {
@@ -275,6 +288,12 @@ li a {
     margin-bottom: 5%;
 }
 
+#slide {
+    display: flex;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    margin: 0 20px;
+}
 
 
 @media(min-width:1700px) {

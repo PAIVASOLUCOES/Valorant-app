@@ -17,7 +17,11 @@
 .itens {
     display: flex;
     gap: 30px;
+
+
 }
+
+
 
 li a {
     color: #fff;
@@ -25,6 +29,7 @@ li a {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-family: 'Lato', sans-serif;
+
 }
 
 .sidebar {
@@ -119,7 +124,7 @@ li a {
 }
 
 .hover-nav {
-    padding: 10px;
+
     border-radius: 5px;
 }
 

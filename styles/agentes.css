@@ -6,12 +6,26 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
     height: 100vh;
     background: #0F1923;
 }
 
+::-webkit-scrollbar {
+    height: 10px;
+    width: 100%;
+    background-color: #14273b;
+    border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: #ACACBE;
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
 
 
 img {
@@ -260,7 +274,7 @@ ul {
 }
 
 #slide-wrapper {
-    overflow-x: hidden;
+
     padding-bottom: 5%;
     background: #0F1923;
     padding-top: 5%;
@@ -269,31 +283,37 @@ ul {
 #slide {
     display: flex;
     margin: 0 20px;
-    justify-content: center;
+    overflow-x: auto;
 }
 
 
+.hover-nav {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hover-nav:hover {
+    background: #333333;
+    padding: 10px;
+
+}
+
 .card-agentes {
-    width: 80vw;
+    width: 60vw;
     flex-shrink: 0;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 20px;
     margin-top: 25px;
     border-radius: 3px;
     margin-bottom: 25px;
-    transform: scale(.6);
     transition: all .3s ease-in-out;
-    opacity: .5;
-}
-
-
-
-
-.card-agentes.active {
     opacity: 1;
     transform: scale(.8);
-
 }
+
+
+
+
 
 .card-agentes img {
     height: 300px;
@@ -387,6 +407,10 @@ ul {
 
     #container-cards {
         margin-bottom: 15px;
+    }
+
+    .card-agentes img {
+        height: 100%;
     }
 }
 

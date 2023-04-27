@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
 @import url(/styles/footerELogin.css);
 @import url(/styles/navEMenuMobile.css);
 
@@ -7,8 +8,23 @@ body,
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
+
+.hover-nav {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.hover-nav:hover {
+    background: #333333;
+    padding: 8px;
+
+}
+
+ul li {
+    padding: 8px;
+}
+
 
 body {
     position: relative;
@@ -110,13 +126,36 @@ ul {
 
 @media(min-width:1500px) {
     li a {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
     }
 
     .creditos {
         font-size: 1.3rem;
     }
 
+    .btn-mainPage {
+        width: 15%;
+        font-size: 1.2rem;
+    }
+
+    .title h2 {
+        font-size: 1.5rem;
+    }
+
+    span {
+        font-size: 1.3rem;
+    }
+
+    .btn-login,
+    .btn-criarConta {
+        font-size: 1.3rem;
+    }
+
+    .dropdown-info {
+        width: 15%;
+    }
 
 }
 
