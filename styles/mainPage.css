@@ -3,7 +3,7 @@
 @import url(/styles/login.css);
 @import url(/styles/footer.css);
 @import url(/styles/nav.css);
-@import url(/styles/menuMobile.css);
+@import url(/styles/menumobile.css);
 body,
 * {
   margin: 0;
