@@ -292,6 +292,7 @@ ul {
     width: 100%;
     transform: translate(-100%);
     display: grid;
+    z-index: 2;
   }
 
   .sidebar.active {
