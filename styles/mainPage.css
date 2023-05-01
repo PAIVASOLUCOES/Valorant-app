@@ -155,6 +155,10 @@ ul {
   }
 }
 
+.sidebar {
+  display: none;
+  z-index: 3;
+}
 @media (max-width: 768px) {
   .video-background video {
     object-position: center;
