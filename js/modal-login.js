@@ -12,6 +12,7 @@ export function modalLogin() {
     event.preventDefault();
 
     containerIniciarSessao.classList.toggle("active");
+    containerIniciarSessao.classList.add("effect");
     if (containerIniciarSessao.classList.contains("active")) {
       setTimeout(() => {
         document.addEventListener("click", fecharJanelaInciarSessao);

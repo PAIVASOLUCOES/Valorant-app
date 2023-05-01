@@ -9,6 +9,7 @@ export function abrirMenuMobile() {
   iconeMenuMobile.addEventListener("click", () => {
     iconeMenuMobile.classList.add("active");
     sideBar.classList.toggle("active");
+    sideBar.classList.add("effect");
   });
 
   closeSideBar.addEventListener("click", fecharSideBar);

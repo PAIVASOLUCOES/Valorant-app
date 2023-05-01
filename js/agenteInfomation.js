@@ -1,18 +1,24 @@
 const idPersonagem = localStorage.getItem("idPersonagem");
 let habilidadeAtual = 0;
+
 async function fetchAgente() {
   const url = `https://valorant-api.com/v1/agents/${idPersonagem}?language=pt-BR`;
   const fetchInicial = await fetch(url);
   const { data } = await fetchInicial.json();
+
   if (data) {
     const imagemInsert = document.getElementById("imagem-left");
     imagemInsert.src = data.fullPortraitV2;
+
     const nameInsert = document.getElementById("name-agente");
     nameInsert.innerHTML = data.displayName;
+
     const insertRole = document.getElementById("role");
     insertRole.innerHTML = data.role.displayName;
+
     const insertBiografy = document.getElementById("biografia");
     insertBiografy.innerHTML = data.description;
+
     const ulAgentes = document.getElementById("icons-abilities");
 
     data.abilities
@@ -26,14 +32,23 @@ async function fetchAgente() {
         ulAgentes.appendChild(li);
 
         img.addEventListener("click", () => {
+          const containerAbilitie = document.querySelector(
+            ".container-aboutAbilities"
+          );
           habilidadeAtual = data.abilities.indexOf(item);
 
           const insertAbilityTitle = document.querySelector(".abilities-title");
           insertAbilityTitle.innerHTML =
             data.abilities[habilidadeAtual].displayName;
+
           const insertAboutAgente = document.getElementById("p-aboutAbilitie");
           insertAboutAgente.innerHTML =
             data.abilities[habilidadeAtual].description;
+
+          containerAbilitie.classList.add("active");
+          setTimeout(() => {
+            containerAbilitie.classList.remove("active");
+          }, 500);
         });
       });
 
@@ -42,6 +57,7 @@ async function fetchAgente() {
     insertAbilityTitle.classList.add("abilities-title");
     insertAbilityTitle.innerHTML = data.abilities[habilidadeAtual].displayName;
     containerTitle.innerHTML = insertAbilityTitle.outerHTML;
+
     const insertAboutAgente = document.getElementById("p-aboutAbilitie");
     insertAboutAgente.innerHTML = data.abilities[habilidadeAtual].description;
   }
@@ -49,4 +65,11 @@ async function fetchAgente() {
 
 window.addEventListener("load", () => {
   fetchAgente();
+  infoAgentes.classList.add("visible");
 });
+
+const infoAgentes = document.querySelector(".info-agentes");
+
+setTimeout(() => {
+  infoAgentes.classList.remove("visible");
+}, 1000);

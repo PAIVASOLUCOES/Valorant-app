@@ -1,13 +1,14 @@
 import { abrirMenuMobile } from "./menuMobile.js";
 import { dropdownExport } from "./menuDropdown.js";
 import { fazerFetchMapas } from "./fetchsValorant.js";
+import { loadAnimations } from "./animations.js";
+
 abrirMenuMobile();
 dropdownExport();
 let atualizarId;
 
 // colocar mapas
 async function pegarFetchMapa() {
-  const mapasUl = document.getElementById("slide");
   const fetchInicial = await fazerFetchMapas();
   const result = fetchInicial.data;
   result.map((item) => {
@@ -20,42 +21,46 @@ async function pegarFetchMapa() {
     li.append(span, img);
     li.id = item.uuid;
 
-    mapasUl.append(li);
+    slide.append(li);
   });
 }
 
 // Fazer navegação por slides
-pegarFetchMapa();
 
-const scrollContent = document.querySelector("#slide");
+const slide = document.querySelector(".slide");
 
 let isDragging = false;
 let startPosition = 0;
 let previousScroll = 0;
 
-scrollContent.addEventListener("mousedown", (e) => {
+slide.addEventListener("mousedown", (e) => {
   e.preventDefault();
   startPosition = e.pageX;
   isDragging = true;
-  scrollContent.style.transition = "none";
+  slide.style.transition = "none";
 });
 
-scrollContent.addEventListener("mousemove", (e) => {
+slide.addEventListener("mousemove", (e) => {
   e.preventDefault();
   if (isDragging) {
     const currentPosition = e.pageX;
     const distance = 2 * (currentPosition - startPosition);
-    scrollContent.scrollLeft = previousScroll - distance;
+    slide.scrollLeft = previousScroll - distance;
   }
 });
 
-scrollContent.addEventListener("mouseup", () => {
-  previousScroll = scrollContent.scrollLeft;
+slide.addEventListener("mouseup", () => {
+  previousScroll = slide.scrollLeft;
   isDragging = false;
-  scrollContent.style.transition = "";
+  slide.style.transition = "";
 });
 
-scrollContent.addEventListener("mouseleave", () => {
+slide.addEventListener("mouseleave", () => {
   isDragging = false;
-  scrollContent.style.transition = "";
+  slide.style.transition = "";
 });
+
+window.addEventListener("load", () => {
+  slide.classList.add("active");
+});
+pegarFetchMapa();

@@ -1,8 +1,16 @@
 import { fazerFetchArmas } from "./fetchsValorant.js";
 import { dropdownExport } from "./menuDropdown.js";
 import { abrirMenuMobile } from "./menuMobile.js";
+import { loadAnimations } from "./animations.js";
 
 const containerGuns = document.getElementById("container-armas");
+const containerArma = document.querySelector(".container-guns");
+const containerSection = document.querySelector(".container-gunsSections");
+const btnDropdown = document.getElementById("dropdown-inicial");
+const dropdown = document.querySelector(".dropdown");
+const setinhaImg = document.querySelector("#dropdown-inicial img");
+const liGunsList = document.querySelectorAll(".li-guns");
+
 let armazenarArmas = null;
 
 async function fetchInicial() {
@@ -14,8 +22,8 @@ async function fetchInicial() {
   armazenarArmas.forEach((item) => {
     const div = createCard(item);
     containerGuns.appendChild(div);
-    const btnAleatorio = div.querySelector("button");
 
+    const btnAleatorio = div.querySelector("button");
     btnAleatorio.addEventListener("click", async () => {
       const cardElement = btnAleatorio.closest(".card-gun");
       const imgElement = cardElement.querySelector("img");
@@ -27,12 +35,14 @@ async function fetchInicial() {
       const numSkins = fetchGun.skins.length;
       const numberRandom = Math.floor(Math.random() * numSkins);
       const selectedSkin = fetchGun.skins[numberRandom];
+
       if (selectedSkin.displayIcon !== null) {
         imgElement.src = selectedSkin.displayIcon;
       }
     });
   });
 }
+
 function createCard(item) {
   const div = document.createElement("div");
   div.classList.add("card-gun");
@@ -88,33 +98,43 @@ function createCard(item) {
   return div;
 }
 
-const btnDropdown = document.getElementById("dropdown-inicial");
-const dropdown = document.querySelector(".dropdown");
-const setinhaImg = document.querySelector("#dropdown-inicial img");
-const liGunsList = document.querySelectorAll(".li-guns");
 btnDropdown.addEventListener("click", () => {
   dropdown.classList.toggle("active");
   setinhaImg.classList.toggle("active");
 });
+
 liGunsList.forEach((li) => {
   li.addEventListener("click", (event) => {
     const constsDivCards = document.querySelectorAll(".card-gun");
     const categoriaDoClick = event.target.textContent.toLowerCase();
+
     dropdown.classList.remove("active");
     setinhaImg.classList.remove("active");
+
     constsDivCards.forEach((card) => {
       if (categoriaDoClick === "todas as armas") {
         card.classList.remove("disapeareCard");
       } else {
         const cardType = card.getAttribute("data-type");
+
         if (cardType !== null && cardType.toLowerCase() !== categoriaDoClick) {
           card.classList.add("disapeareCard");
         } else {
           card.classList.remove("disapeareCard");
         }
       }
+
+      containerArma.classList.add("active");
+
+      setTimeout(() => {
+        containerArma.classList.remove("active");
+      }, 500);
     });
   });
+});
+
+window.addEventListener("load", () => {
+  containerSection.classList.add("active");
 });
 
 fetchInicial();
