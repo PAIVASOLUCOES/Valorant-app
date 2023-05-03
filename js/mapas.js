@@ -1,10 +1,7 @@
 import { abrirMenuMobile } from "./menuMobile.js";
 import { dropdownExport } from "./menuDropdown.js";
 import { fazerFetchMapas } from "./fetchsValorant.js";
-import { loadAnimations } from "./animations.js";
 
-abrirMenuMobile();
-dropdownExport();
 let atualizarId;
 
 // colocar mapas
@@ -60,7 +57,11 @@ slide.addEventListener("mouseleave", () => {
   slide.style.transition = "";
 });
 
-window.addEventListener("load", () => {
-  slide.classList.add("active");
+document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
+    slide.classList.add("active");
+    pegarFetchMapa();
+    abrirMenuMobile();
+    dropdownExport();
+  });
 });
-pegarFetchMapa();

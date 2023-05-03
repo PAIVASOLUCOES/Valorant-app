@@ -1,7 +1,6 @@
 import { fazerFetchArmas } from "./fetchsValorant.js";
 import { dropdownExport } from "./menuDropdown.js";
 import { abrirMenuMobile } from "./menuMobile.js";
-import { loadAnimations } from "./animations.js";
 
 const containerGuns = document.getElementById("container-armas");
 const containerArma = document.querySelector(".container-guns");
@@ -133,10 +132,11 @@ liGunsList.forEach((li) => {
   });
 });
 
-window.addEventListener("load", () => {
-  containerSection.classList.add("active");
+document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
+    containerSection.classList.add("active");
+    fetchInicial();
+    dropdownExport();
+    abrirMenuMobile();
+  });
 });
-
-fetchInicial();
-dropdownExport();
-abrirMenuMobile();

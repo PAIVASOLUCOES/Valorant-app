@@ -1,7 +1,6 @@
 import { fazerFetchAgentes } from "./fetchsValorant.js";
 import { dropdownExport } from "./menuDropdown.js";
 import { abrirMenuMobile } from "./menuMobile.js";
-import { loadAnimations } from "./animations.js";
 
 const scrollContent = document.querySelector("#slide");
 
@@ -85,12 +84,13 @@ scrollContent.addEventListener("mouseleave", () => {
   scrollContent.style.transition = "";
 });
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const slideCards = document.querySelector(".slideCards");
-  slideCards.classList.add("active");
-});
 
-abrirMenuMobile();
-dropdownExport();
-loadAnimations();
-criarcards();
+  window.addEventListener("load", () => {
+    slideCards.classList.add("active");
+    dropdownExport();
+    abrirMenuMobile();
+    criarcards();
+  });
+});
