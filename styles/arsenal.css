@@ -299,7 +299,7 @@ li a {
 
 .footer {
   margin-top: 5%;
-  display: flex;
+  display: none;
   justify-content: space-between;
   color: #fff;
   width: 100%;

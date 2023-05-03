@@ -3,6 +3,8 @@ import { dropdownExport } from "./menuDropdown.js";
 import { abrirMenuMobile } from "./menuMobile.js";
 
 const scrollContent = document.querySelector("#slide");
+const nav = document.querySelector(".nav");
+const footer = document.querySelector(".footer");
 
 let isDragging = false;
 let startPosition = 0;
@@ -55,6 +57,7 @@ async function criarcards() {
     divAbout.classList.add("info-agentes");
     containerCards.appendChild(li);
   });
+  footer.style.opacity = 1;
 }
 
 scrollContent.addEventListener("mousedown", (e) => {
@@ -89,6 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("load", () => {
     slideCards.classList.add("active");
+    nav.classList.add("active");
+    footer.classList.add("active");
     dropdownExport();
     abrirMenuMobile();
     criarcards();

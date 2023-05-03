@@ -2,6 +2,8 @@ import { fazerFetchArmas } from "./fetchsValorant.js";
 import { dropdownExport } from "./menuDropdown.js";
 import { abrirMenuMobile } from "./menuMobile.js";
 
+const nav = document.querySelector(".nav");
+const footer = document.querySelector(".footer");
 const containerGuns = document.getElementById("container-armas");
 const containerArma = document.querySelector(".container-guns");
 const containerSection = document.querySelector(".container-gunsSections");
@@ -40,6 +42,7 @@ async function fetchInicial() {
       }
     });
   });
+  footer.style.display = " flex";
 }
 
 function createCard(item) {
@@ -135,6 +138,7 @@ liGunsList.forEach((li) => {
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
     containerSection.classList.add("active");
+    nav.classList.add("active");
     fetchInicial();
     dropdownExport();
     abrirMenuMobile();

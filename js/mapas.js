@@ -59,7 +59,11 @@ slide.addEventListener("mouseleave", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
+    const nav = document.querySelector(".nav");
+    const footer = document.querySelector(".footer");
     slide.classList.add("active");
+    nav.classList.add("active");
+    footer.classList.add("active");
     pegarFetchMapa();
     abrirMenuMobile();
     dropdownExport();
