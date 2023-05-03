@@ -132,13 +132,13 @@ ul {
   font-family: "Lato", sans-serif;
   padding-bottom: 12px;
   padding-top: 12px;
-  opacity: 0;
+  position: fixed;
+  bottom: 0;
 }
 .footer.active {
   animation: show-right 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .creditos {
   margin-left: 5%;
   font-family: "Lato", sans-serif;
