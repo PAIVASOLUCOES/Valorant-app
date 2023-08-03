@@ -69,3 +69,60 @@ export interface MediaList {
   wwise: string;
   wave: string;
 }
+
+export interface ModaisTypes {
+  AgentesApi: DataApi | undefined;
+  modalValue: boolean;
+  setMenuIsOpen: (modalValue: boolean) => void;
+}
+
+export interface typeArsenal {
+  arma?: Arsenal | undefined;
+}
+
+export interface Arsenal {
+  uuid: string;
+  displayName: string;
+  displayIcon: string;
+  shopData: shoppingInfo;
+}
+export interface typesHandleClick {
+  arma: Arsenal;
+}
+export interface shoppingInfo {
+  category: string;
+  categoryText: string;
+  cost: number;
+}
+
+export interface Maps {
+  status: number;
+  data: Daum[];
+}
+
+export interface Daum {
+  uuid: string;
+  displayName: string;
+  coordinates?: string;
+  displayIcon?: string;
+  listViewIcon: string;
+  splash: string;
+  assetPath: string;
+  mapUrl: string;
+  xMultiplier: number;
+  yMultiplier: number;
+  xScalarToAdd: number;
+  yScalarToAdd: number;
+  callouts?: Callout[];
+}
+
+export interface Callout {
+  regionName: string;
+  superRegionName: string;
+  location: Location;
+}
+
+export interface Location {
+  x: number;
+  y: number;
+}

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Loading from "../Helpers/Loading";
@@ -13,21 +13,23 @@ import {
 import { fetchAllMaps } from "../Hooks/FetchsApi";
 
 const Mapas = () => {
-  const { AllMaps, ErrorFetchMapas, LoadingMapas } = fetchAllMaps();
+  const { AllMaps, LoadingMapas } = fetchAllMaps();
 
-  const slideRef = useRef(null);
+  const slideRef = useRef<HTMLUListElement | null>(null);
+
   const [isDragging, setIsDragging] = useState(false);
   const [startPosition, setStartPosition] = useState(0);
   const [previousScroll, setPreviousScroll] = useState(0);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     setStartPosition(e.pageX);
     setIsDragging(true);
   };
-  const handleMouseMove = (e) => {
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
-    if (isDragging) {
+    if (isDragging && slideRef.current) {
       const currentPosition = e.pageX;
       const distance = 2 * (currentPosition - startPosition);
       slideRef.current.scrollLeft = previousScroll - distance;
@@ -35,7 +37,9 @@ const Mapas = () => {
   };
 
   const handleMouseUp = () => {
-    setPreviousScroll(slideRef.current.scrollLeft);
+    if (slideRef.current) {
+      setPreviousScroll(slideRef.current.scrollLeft);
+    }
     setIsDragging(false);
   };
 
@@ -48,15 +52,14 @@ const Mapas = () => {
     return (
       <>
         <Header />
-        <MapasMain>
+        <MapasMain
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
           <TitleMain>Mapas</TitleMain>
-          <ContainerAllMaps
-            ref={slideRef}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
-          >
+          <ContainerAllMaps ref={slideRef}>
             {AllMaps.map((mapa) => {
               return (
                 <MapaCard key={mapa.uuid}>
@@ -70,6 +73,8 @@ const Mapas = () => {
         <Footer className="online" />
       </>
     );
+
+  return null;
 };
 
 export default Mapas;

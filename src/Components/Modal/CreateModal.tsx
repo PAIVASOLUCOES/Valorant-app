@@ -15,24 +15,35 @@ import {
   TitleAbility,
   TitleAbouts,
   TitleAgente,
-} from "../Agentes/Style";
+} from "../Modal/Style";
 import iconClose from "../../assets/close_FILL0_wght400_GRAD0_opsz48 (1).svg";
 import ImageSkeleton from "../Helpers/Skeleton";
+import { ModaisTypes } from "../../Types";
 
-const Modal = ({ AgentesApi, modalValue, setMenuIsOpen }) => {
+const Modal: React.FC<ModaisTypes> = ({
+  AgentesApi,
+  modalValue,
+  setMenuIsOpen,
+}) => {
   if (AgentesApi !== undefined) {
     const [indexIcon, setIndexIcon] = useState(0);
+    const [showIconDescription, setShowIconDescription] = useState(true);
 
-    function handleIcon(index) {
+    function handleIcon(index: number) {
       setIndexIcon(index);
+      setShowIconDescription(false);
+      setTimeout(() => {
+        setShowIconDescription(true);
+      }, 0);
     }
 
     function handleModal() {
       setMenuIsOpen(!modalValue);
     }
+
     return (
       <ContainerModal>
-        <ModalWindow>
+        <ModalWindow colorsModal={AgentesApi.backgroundGradientColors}>
           <CloseModal src={iconClose} onClick={handleModal} />
           <ContainerLeft>
             <TitleAgente>{AgentesApi.displayName}</TitleAgente>
@@ -40,13 +51,24 @@ const Modal = ({ AgentesApi, modalValue, setMenuIsOpen }) => {
               className="Img-modal"
               src={AgentesApi.fullPortrait}
             />
+            <ImageSkeleton
+              className="NameAgente Top"
+              src={AgentesApi.background}
+            />
+            <ImageSkeleton
+              className="NameAgente Bot"
+              src={AgentesApi.background}
+            />
           </ContainerLeft>
           <ContainerRight>
             <ContainerDescription>
               <DivDescription>
                 <TitleAbouts>Descrição:</TitleAbouts>
                 <TitleAbouts>
-                  Categoria: {AgentesApi.role.displayName}{" "}
+                  Categoria:
+                  {AgentesApi.role !== undefined
+                    ? AgentesApi.role.displayName
+                    : ""}
                 </TitleAbouts>
               </DivDescription>
               <SpanAbout>{AgentesApi.description}</SpanAbout>
@@ -61,7 +83,6 @@ const Modal = ({ AgentesApi, modalValue, setMenuIsOpen }) => {
                     <ImageSkeleton
                       key={index}
                       src={abilidade.displayIcon}
-                      id={index}
                       className="icon-ability"
                       onClick={() => handleIcon(index)}
                     />
@@ -70,7 +91,7 @@ const Modal = ({ AgentesApi, modalValue, setMenuIsOpen }) => {
                   )
                 )}
               </ContainerIcons>
-              <DivIcons>
+              <DivIcons className={showIconDescription ? "show" : ""}>
                 <TitleAbility>
                   {AgentesApi.abilities[indexIcon].displayName}
                 </TitleAbility>

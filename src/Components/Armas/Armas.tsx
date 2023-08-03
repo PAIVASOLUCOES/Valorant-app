@@ -15,17 +15,10 @@ import {
 import ImageSkeleton from "../Helpers/Skeleton";
 import BtnTop from "../Helpers/BtnTop";
 import Loading from "../Helpers/Loading";
-import { useEffect, useState } from "react";
 import { fetchAllGuns } from "../Hooks/FetchsApi";
 
 const Armas = () => {
   const { Arsenal, ArsenalLoading } = fetchAllGuns();
-  const [id, setId] = useState("");
-
-  function handleClick({ currentTarget }) {
-    setId(currentTarget.id);
-    console.log(id);
-  }
 
   if (ArsenalLoading) return <Loading />;
   return (
@@ -38,7 +31,7 @@ const Armas = () => {
           {Arsenal
             ? Arsenal.map((arma) => {
                 return (
-                  <CardGun key={arma.uuid} id={arma.uuid} onClick={handleClick}>
+                  <CardGun key={arma.uuid} id={arma.uuid}>
                     <TitleArma>{arma.displayName}</TitleArma>
                     <ImageSkeleton src={arma.displayIcon} className="Arsenal" />
                     <ContainerInfo className="Container">

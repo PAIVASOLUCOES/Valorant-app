@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Arsenal, DataApi, Daum } from "../../Types";
 
 export const fetchAllAgents = () => {
   const url = `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR`;
 
-  const [AllAgents, setAgents] = useState();
+  const [AllAgents, setAgents] = useState<DataApi[] | undefined>();
   const [ErrorFetchAgents, setErrorAgents] = useState(false);
   const [LoadingAgents, setLoadingAgents] = useState(false);
   const fetchAgents = async () => {
@@ -12,7 +13,7 @@ export const fetchAllAgents = () => {
       const response = await fetch(url);
       if (response.ok) {
         const result = await response.json();
-        setAgents(result);
+        setAgents(result.data);
       } else {
         throw new Error("Error ao trazer os agentes");
       }
@@ -31,14 +32,14 @@ export const fetchAllAgents = () => {
 export const fetchAllMaps = () => {
   const url = `https://valorant-api.com/v1/maps?language=pt-BR`;
 
-  const [AllMaps, setMaps] = useState();
+  const [AllMaps, setMaps] = useState<Daum[]>();
   const [ErrorFetchMapas, setErrorMapas] = useState(false);
   const [LoadingMapas, setLoadingMapas] = useState(false);
   const fetchAgents = async () => {
     try {
       setLoadingMapas(true);
       const response = await fetch(url);
-      console.log(response);
+
       if (response.ok) {
         const result = await response.json();
         setMaps(result.data);
@@ -60,7 +61,7 @@ export const fetchAllMaps = () => {
 export const fetchAllGuns = () => {
   const url = `https://valorant-api.com/v1/weapons?language=pt-BR`;
 
-  const [Arsenal, setArsenal] = useState();
+  const [Arsenal, setArsenal] = useState<Arsenal[] | undefined>();
   const [ArsenalLoading, setArsenalLoading] = useState(false);
   const [ErrorArsenal, setErrorArsenal] = useState(false);
   const fetchAgents = async () => {

@@ -15,15 +15,18 @@ import ImageSkeleton from "../Helpers/Skeleton";
 import Loading from "../Helpers/Loading";
 import BtnTop from "../Helpers/BtnTop";
 import { fetchAllAgents } from "../Hooks/FetchsApi";
+import { DataApi } from "../../Types";
 
 const Agentes = () => {
   const { AllAgents, ErrorFetchAgents, LoadingAgents } = fetchAllAgents();
-  const [agentesApi, setAgentesApi] = useState();
+  const [agentesApi, setAgentesApi] = useState<DataApi | undefined>();
 
   const [modalValue, setModal] = useState(false);
-  function handleModal(agente) {
-    setAgentesApi(agente);
-    setModal(!modalValue);
+  function handleModal(agente: DataApi | undefined) {
+    if (agente) {
+      setAgentesApi(agente);
+      setModal(!modalValue);
+    }
   }
 
   if (LoadingAgents) return <Loading />;
@@ -32,11 +35,11 @@ const Agentes = () => {
     return (
       <>
         <Header />
-        <BtnTop className={modalValue ? "" : "IsActive"} />
+        <BtnTop />
         <ContainerAgentes>
           <TitleAgentes>Agentes</TitleAgentes>
           <ContainerCards>
-            {AllAgents.data.map((agente) => {
+            {AllAgents.map((agente) => {
               return (
                 <Card key={agente.uuid} onClick={() => handleModal(agente)}>
                   <TitleCard>{agente.displayName}</TitleCard>

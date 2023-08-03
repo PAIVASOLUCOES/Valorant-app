@@ -13,14 +13,21 @@ export const ContainerModal = styled.aside`
   background: hsla(0, 0%, 0%, 0.3);
 `;
 
-export const ModalWindow = styled.section`
+interface colorsmodal {
+  colorsModal: string[];
+}
+export const ModalWindow = styled.section<colorsmodal>`
   display: flex;
   width: 1200px;
   max-width: 1170px;
-  background: rgba(24, 26, 33, 0.6);
-  padding: 25px 10px;
+  background: linear-gradient(
+    #${(props) => props.colorsModal[1]},
+    #${(props) => props.colorsModal[2]}
+  );
+  padding: 25px 25px;
   border-radius: 3px;
   justify-content: center;
+  align-items: start;
   width: 85%;
   position: relative;
   max-height: 514px;
@@ -29,10 +36,9 @@ export const ModalWindow = styled.section`
   @media (max-width: 1300px) {
     flex-direction: row-reverse;
   }
-  @media (max-width: 948px) {
+  @media (max-width: 1100px) {
     flex-direction: column;
-    justify-content: start;
-
+    align-items: center;
     width: 80%;
     height: 90%;
     max-height: 90%;
@@ -56,10 +62,12 @@ export const ModalWindow = styled.section`
     }
   }
 `;
+
 export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   @media (max-width: 1080px) {
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -143,14 +151,32 @@ export const DescriptionAbility = styled.p`
   color: #cac7c7;
   font-size: 1.2rem;
 `;
-export const DivIcons = styled.div``;
+export const DivIcons = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &.show {
+    animation: iconAbilities 0.3s forwards;
+  }
+  @keyframes iconAbilities {
+    from {
+      transform: translateX(-60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+`;
+
 export const CloseModal = styled.img`
   position: absolute;
   width: 40px;
-  right: 0;
+  right: 4px;
   top: 0;
   cursor: pointer;
-  @media (max-width: 768px) {
+  @media (max-width: 630px) {
     top: 40px;
   }
 `;

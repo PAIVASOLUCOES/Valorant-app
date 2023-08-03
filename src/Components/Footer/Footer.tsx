@@ -46,7 +46,7 @@ export const SpanFooter = styled.a`
     text-align: center;
   }
 `;
-export const MyGitHub = styled.a`
+export const MyGitHub = styled.span`
   font-family: "Roboto", sans-serif;
   color: #e1e0e0;
 `;
@@ -65,24 +65,24 @@ export const ImgIcons = styled.img`
     width: 40px;
   }
 `;
+export const LinkToAnother = styled.a``;
 const Footer = (classname: classesName) => {
   return (
     <FooterContainer className={classname.className}>
       <FooterCenter className={classname.className}>
         <SpanFooter href="https://github.com/Faelkk" target="_blank">
-          Todos os direitos reservado por
-          <MyGitHub>Rafael</MyGitHub>
+          Todos os direitos reservado por <MyGitHub>Rafael</MyGitHub>
         </SpanFooter>
         <IconsContainer>
-          <a href="https://github.com/Faelkk" target="_blank">
+          <LinkToAnother href="https://github.com/Faelkk" target="_blank">
             <ImgIcons src={iconGithub} />
-          </a>
-          <a
+          </LinkToAnother>
+          <LinkToAnother
             href="https://www.linkedin.com/in/rafael-achtenberg-7a4b12284/"
             target="_blank"
           >
             <ImgIcons src={iconLinkedin} />
-          </a>
+          </LinkToAnother>
         </IconsContainer>
       </FooterCenter>
     </FooterContainer>
