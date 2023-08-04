@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ContainerLeft,
   ContainerRight,
@@ -10,7 +10,6 @@ import {
   TitlesModal,
   ContainerDamage,
   RangeTitle,
-  ContainerDamageRange,
   Description,
   InfoDiv,
   SpanDamage,
@@ -28,7 +27,18 @@ const ModalGuns: React.FC<TypeModal> = ({ Arma, modalValue, setModal }) => {
   function handleModal() {
     setModal(!modalValue);
   }
-  console.log(Arma);
+
+  useEffect(() => {
+    if (modalValue) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [modalValue]);
   if (Arma !== undefined)
     return (
       <ContainerModal>
@@ -49,40 +59,31 @@ const ModalGuns: React.FC<TypeModal> = ({ Arma, modalValue, setModal }) => {
           <ContainerRight>
             <InfoDiv>
               <TitlesModal>Informações sobre o dano</TitlesModal>
-              <ContainerDamage>
-                {Arma.weaponStats.damageRanges.map((arma: damageStats) => {
-                  console.log(arma);
-                  return (
+              {Arma.weaponStats.damageRanges.map((arma: damageStats, index) => (
+                <ContainerDamage key={index}>
+                  {arma.rangeStartMeters === 0 ? (
                     <>
-                      <ContainerDamageRange>
-                        {arma.rangeStartMeters === 0 ? (
-                          <>
-                            <RangeTitle>0 a 30 metros</RangeTitle>
-                          </>
-                        ) : (
-                          <RangeTitle>30 a 50 metros</RangeTitle>
-                        )}
-                        <Description>
-                          <SpanContainer>
-                            <SpanDamage>Dano no corpo:</SpanDamage>
-                            <SpanDamage>{arma.bodyDamage}</SpanDamage>
-                          </SpanContainer>
-                          <SpanContainer>
-                            <SpanDamage>Dano na cabeça:</SpanDamage>
-                            <SpanDamage>
-                              {arma.headDamage.toFixed(0)}
-                            </SpanDamage>
-                          </SpanContainer>
-                          <SpanContainer>
-                            <SpanDamage>Dano na perna:</SpanDamage>
-                            <SpanDamage>{arma.legDamage.toFixed(0)}</SpanDamage>
-                          </SpanContainer>
-                        </Description>
-                      </ContainerDamageRange>
+                      <RangeTitle>0 a 30 metros</RangeTitle>
                     </>
-                  );
-                })}
-              </ContainerDamage>
+                  ) : (
+                    <RangeTitle>30 a 50 metros</RangeTitle>
+                  )}
+                  <Description>
+                    <SpanContainer>
+                      <SpanDamage>Dano no corpo:</SpanDamage>
+                      <SpanDamage>{arma.bodyDamage}</SpanDamage>
+                    </SpanContainer>
+                    <SpanContainer>
+                      <SpanDamage>Dano na cabeça:</SpanDamage>
+                      <SpanDamage>{arma.headDamage.toFixed(0)}</SpanDamage>
+                    </SpanContainer>
+                    <SpanContainer>
+                      <SpanDamage>Dano na perna:</SpanDamage>
+                      <SpanDamage>{arma.legDamage.toFixed(0)}</SpanDamage>
+                    </SpanContainer>
+                  </Description>
+                </ContainerDamage>
+              ))}
             </InfoDiv>
           </ContainerRight>
         </ModalWindow>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface colorsmodal {
-  colorsModal: string[];
+  colorsmodal: string[];
 }
 export const ContainerModal = styled.aside`
   display: flex;
@@ -21,8 +21,8 @@ export const ModalWindow = styled.section<colorsmodal>`
   width: 1200px;
   max-width: 1170px;
   background: linear-gradient(
-    #${(props) => props.colorsModal[1]},
-    #${(props) => props.colorsModal[2]}
+    #${(props) => props.colorsmodal[1]},
+    #${(props) => props.colorsmodal[2]}
   );
   padding: 25px;
   border-radius: 3px;
@@ -46,7 +46,7 @@ export const ModalWindow = styled.section<colorsmodal>`
   @media (max-width: 630px) {
     flex-direction: column;
     max-height: 100%;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     justify-content: start;
     overflow: auto;
@@ -83,6 +83,9 @@ export const ContainerRight = styled.div`
     align-items: center;
     width: 100%;
   }
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
+  }
   @media (max-width: 768px) {
     margin-bottom: 2rem;
   }
@@ -90,6 +93,9 @@ export const ContainerRight = styled.div`
 export const TitleAgente = styled.h2`
   font-family: "Roboto", sans-serif;
   color: #fff;
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 
 export const ContainerDescription = styled.div`
@@ -175,6 +181,7 @@ export const CloseModal = styled.img`
   width: 40px;
   right: 4px;
   top: 0;
+  z-index: 100;
   cursor: pointer;
   @media (max-width: 630px) {
     top: 40px;

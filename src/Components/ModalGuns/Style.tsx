@@ -43,12 +43,10 @@ export const ModalWindow = styled.div`
   }
   @media (max-width: 520px) {
     max-height: 100%;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     padding: 0px;
-
-    justify-content: start;
-    overflow: auto;
+    overflow-y: hidden;
   }
 `;
 export const ContainerLeft = styled.div`
@@ -75,7 +73,7 @@ export const TitlesModal = styled.h2`
   font-size: 2rem;
   text-align: center;
 `;
-export const ContainerBtn = styled.button`
+export const ContainerBtn = styled.div`
   display: flex;
   background: transparent;
   justify-content: space-between;

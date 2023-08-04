@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CloseModal,
   ContainerAbility,
@@ -40,10 +40,21 @@ const Modal: React.FC<ModaisTypes> = ({
     function handleModal() {
       setMenuIsOpen(!modalValue);
     }
+    useEffect(() => {
+      if (modalValue) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    }, [modalValue]);
 
     return (
       <ContainerModal>
-        <ModalWindow colorsModal={AgentesApi.backgroundGradientColors}>
+        <ModalWindow colorsmodal={AgentesApi.backgroundGradientColors}>
           <CloseModal src={iconClose} onClick={handleModal} />
           <ContainerLeft>
             <TitleAgente>{AgentesApi.displayName}</TitleAgente>
