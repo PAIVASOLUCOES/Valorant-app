@@ -27,10 +27,10 @@ const Header = () => {
 
   const currentURL = window.location.pathname;
   const allLinks = [
-    { path: "/", text: "Home" },
-    { path: "/agentes", text: "Agentes" },
-    { path: "/arsenal", text: "Arsenal" },
-    { path: "/mapas", text: "Mapas" },
+    { path: "/", text: "home" },
+    { path: "/agentes", text: "agentes" },
+    { path: "/arsenal", text: "arsenal" },
+    { path: "/mapas", text: "mapas" },
   ];
   const WidthScreen = UseWidthHook();
 

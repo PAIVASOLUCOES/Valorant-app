@@ -76,10 +76,10 @@ export const LogoCenter = styled.div`
 
 const currentURL = window.location.pathname;
 const allLinks = [
-  { path: "/", text: "Home" },
-  { path: "/Agentes", text: "Agentes" },
-  { path: "/Arsenal", text: "Arsenal" },
-  { path: "/Mapas", text: "Mapas" },
+  { path: "/", text: "home" },
+  { path: "/agentes", text: "agentes" },
+  { path: "/arsenal", text: "arsenal" },
+  { path: "/mapas", text: "mapas" },
 ];
 const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
   function handleMenuMobile() {
