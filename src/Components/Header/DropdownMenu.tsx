@@ -3,7 +3,6 @@ import iconClose from "../../assets/close_FILL0_wght400_GRAD0_opsz48 (1).svg";
 import logoImg from "../../assets/riot.svg";
 import { Link } from "react-router-dom";
 import { LogoIcon, TitleLogo } from "./Style";
-import Footer from "../Footer/Footer";
 import { TypeMenu } from "../../Types";
 
 export const StyledLink = styled(Link)`
@@ -74,13 +73,13 @@ export const LogoCenter = styled.div`
   width: 90%;
 `;
 
-const currentURL = window.location.pathname;
-const allLinks = [
-  { path: "/", text: "home" },
-  { path: "/agentes", text: "agentes" },
-  { path: "/arsenal", text: "arsenal" },
-  { path: "/mapas", text: "mapas" },
-];
+// const currentURL = window.location.pathname;
+// const allLinks = [
+//   { path: "/", text: "home" },
+//   { path: "/agentes", text: "agentes" },
+//   { path: "/arsenal", text: "arsenal" },
+//   { path: "/mapas", text: "mapas" },
+// ];
 const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
   function handleMenuMobile() {
     setMenuMobile(!menuMobile);
@@ -96,17 +95,23 @@ const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
         </LogoCenter>
       </ContainerLogo>
       <Dropdown>
-        {allLinks.map((link) =>
-          link.path !== currentURL ? (
-            <StyledLink to={link.path} key={link.path}>
-              <SpanAbout>{link.text}</SpanAbout>
-            </StyledLink>
-          ) : (
-            ""
-          )
-        )}
+        <StyledLink to='/'>
+          <SpanAbout>Home</SpanAbout>
+        </StyledLink>
+
+        <StyledLink to='/agentes' onClick={handleMenuMobile}>
+          <SpanAbout>Agentes</SpanAbout>
+        </StyledLink>
+
+        <StyledLink to='/arsenal' onClick={handleMenuMobile}>
+          <SpanAbout>Arsenal</SpanAbout>
+        </StyledLink>
+
+        <StyledLink to='/mapas' onClick={handleMenuMobile}>
+          <SpanAbout>Mapas</SpanAbout>
+        </StyledLink>
       </Dropdown>
-      <Footer className={menuMobile ? "Active" : ""} />
+      {/* <Footer className={menuMobile ? "Active" : ""} /> */}
     </DropdownContainer>
   );
 };
