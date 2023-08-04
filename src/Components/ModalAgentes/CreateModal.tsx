@@ -15,7 +15,7 @@ import {
   TitleAbility,
   TitleAbouts,
   TitleAgente,
-} from "../Modal/Style";
+} from "./Style";
 import iconClose from "../../assets/close_FILL0_wght400_GRAD0_opsz48 (1).svg";
 import ImageSkeleton from "../Helpers/Skeleton";
 import { ModaisTypes } from "../../Types";

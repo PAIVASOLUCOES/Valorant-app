@@ -76,8 +76,13 @@ export interface ModaisTypes {
   setMenuIsOpen: (modalValue: boolean) => void;
 }
 
+export interface TypeModal {
+  Arma: Arsenal | undefined;
+  modalValue: boolean;
+  setModal: (modalValue: boolean) => void;
+}
 export interface typeArsenal {
-  arma?: Arsenal | undefined;
+  Arma?: Arsenal | undefined;
 }
 
 export interface Arsenal {
@@ -85,6 +90,16 @@ export interface Arsenal {
   displayName: string;
   displayIcon: string;
   shopData: shoppingInfo;
+  weaponStats: statsGun;
+}
+export interface statsGun {
+  damageRanges: damageStats[];
+}
+export interface damageStats {
+  rangeStartMeters: number;
+  bodyDamage: number;
+  headDamage: number;
+  legDamage: number;
 }
 export interface typesHandleClick {
   arma: Arsenal;

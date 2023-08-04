@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+interface colorsmodal {
+  colorsModal: string[];
+}
 export const ContainerModal = styled.aside`
   display: flex;
   justify-content: center;
@@ -13,9 +16,6 @@ export const ContainerModal = styled.aside`
   background: hsla(0, 0%, 0%, 0.3);
 `;
 
-interface colorsmodal {
-  colorsModal: string[];
-}
 export const ModalWindow = styled.section<colorsmodal>`
   display: flex;
   width: 1200px;
@@ -24,7 +24,7 @@ export const ModalWindow = styled.section<colorsmodal>`
     #${(props) => props.colorsModal[1]},
     #${(props) => props.colorsModal[2]}
   );
-  padding: 25px 25px;
+  padding: 25px;
   border-radius: 3px;
   justify-content: center;
   align-items: start;
@@ -53,7 +53,7 @@ export const ModalWindow = styled.section<colorsmodal>`
   }
   @keyframes menuDown {
     from {
-      transform: translateY(-1500px);
+      transform: translateY(-550px);
       opacity: 0;
     }
     to {

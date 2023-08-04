@@ -10,7 +10,7 @@ import {
   TitleCard,
 } from "./Style";
 import { useState } from "react";
-import Modal from "../Modal/CreateModal";
+import Modal from "../ModalAgentes/CreateModal";
 import ImageSkeleton from "../Helpers/Skeleton";
 import Loading from "../Helpers/Loading";
 import BtnTop from "../Helpers/BtnTop";

@@ -16,9 +16,19 @@ import ImageSkeleton from "../Helpers/Skeleton";
 import BtnTop from "../Helpers/BtnTop";
 import Loading from "../Helpers/Loading";
 import { fetchAllGuns } from "../Hooks/FetchsApi";
+import { useState } from "react";
+import ModalGuns from "../ModalGuns/ModalGuns";
+
+import { Arsenal } from "../../Types";
 
 const Armas = () => {
   const { Arsenal, ArsenalLoading } = fetchAllGuns();
+  const [modalValue, setModal] = useState(false);
+  const [Arma, SetArma] = useState<Arsenal>();
+  function handleClick(agente: Arsenal) {
+    setModal(true);
+    SetArma(agente);
+  }
 
   if (ArsenalLoading) return <Loading />;
   return (
@@ -31,7 +41,11 @@ const Armas = () => {
           {Arsenal
             ? Arsenal.map((arma) => {
                 return (
-                  <CardGun key={arma.uuid} id={arma.uuid}>
+                  <CardGun
+                    key={arma.uuid}
+                    id={arma.uuid}
+                    onClick={() => handleClick(arma)}
+                  >
                     <TitleArma>{arma.displayName}</TitleArma>
                     <ImageSkeleton src={arma.displayIcon} className="Arsenal" />
                     <ContainerInfo className="Container">
@@ -47,13 +61,18 @@ const Armas = () => {
                           }`}
                         </SpanAboutGuns>
                       </ContainerInfo>
-                      <BtnSaibaMais>Skins</BtnSaibaMais>
+                      <BtnSaibaMais>Saiba mais</BtnSaibaMais>
                     </ContainerInfo>
                   </CardGun>
                 );
               })
             : ""}
         </GunsContainer>
+        {modalValue ? (
+          <ModalGuns Arma={Arma} modalValue={modalValue} setModal={setModal} />
+        ) : (
+          ""
+        )}
       </ArsenalMain>
       <Footer />
     </>
