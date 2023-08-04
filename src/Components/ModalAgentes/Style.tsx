@@ -49,7 +49,7 @@ export const ModalWindow = styled.section<colorsmodal>`
     height: 100vh;
     width: 100%;
     justify-content: start;
-    overflow: auto;
+    overflow-y: auto;
   }
   @keyframes menuDown {
     from {
@@ -101,6 +101,7 @@ export const TitleAgente = styled.h2`
 export const ContainerDescription = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 `;
 export const DivDescription = styled.div`
   display: flex;
@@ -147,6 +148,7 @@ export const TitleAbility = styled.h3`
 export const ContainerIcons = styled.div`
   display: flex;
   gap: 2rem;
+
   @media (max-width: 988px) {
     gap: 1rem;
   }

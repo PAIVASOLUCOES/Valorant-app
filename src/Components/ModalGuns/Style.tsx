@@ -96,6 +96,7 @@ export const InfoDiv = styled.div`
 export const ContainerDamage = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
   @media (max-width: 800px) {
     align-items: center;
   }
