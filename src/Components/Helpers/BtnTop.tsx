@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import React from "react";
 const ButtonTop = styled.button`
   position: fixed;
   bottom: 4px;
