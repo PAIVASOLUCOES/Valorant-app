@@ -15,6 +15,8 @@ export const TitleMain = styled.h2`
 `;
 export const ContainerAllMaps = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   overflow-x: auto;
 `;
 export const TitleMapas = styled.h3`

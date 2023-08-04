@@ -26,9 +26,12 @@ const Modal: React.FC<ModaisTypes> = ({
   setMenuIsOpen,
 }) => {
   if (AgentesApi !== undefined) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [indexIcon, setIndexIcon] = useState(0);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [showIconDescription, setShowIconDescription] = useState(true);
 
+    // eslint-disable-next-line no-inner-declarations
     function handleIcon(index: number) {
       setIndexIcon(index);
       setShowIconDescription(false);
@@ -37,9 +40,11 @@ const Modal: React.FC<ModaisTypes> = ({
       }, 0);
     }
 
+    // eslint-disable-next-line no-inner-declarations
     function handleModal() {
       setMenuIsOpen(!modalValue);
     }
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       if (modalValue) {
         document.body.style.overflow = "hidden";

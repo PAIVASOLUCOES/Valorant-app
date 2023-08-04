@@ -28,6 +28,7 @@ const ImgCard = styled.img`
   transition: opacity 0.3s ease-in-out;
   &.icon-ability {
     width: 52px;
+    height: 52px;
     cursor: pointer;
     border: 1px solid #eee;
     padding: 10px;

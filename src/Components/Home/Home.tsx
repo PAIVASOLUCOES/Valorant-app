@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
 import {
   Backgrounds,
   BtnMain,
@@ -16,6 +20,10 @@ import iconValorant from "../../assets/logo.svg";
 const Home = () => {
   return (
     <>
+<<<<<<< HEAD
+=======
+      {/* <Header /> */}
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
       <ContainerBackGrounds>
         <Backgrounds src={ImgBack} />
       </ContainerBackGrounds>

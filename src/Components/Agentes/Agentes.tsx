@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
 import {
   BtnMore,
   Card,
@@ -31,6 +36,10 @@ const Agentes = () => {
   if (AllAgents !== undefined) {
     return (
       <>
+<<<<<<< HEAD
+=======
+        {/* <Header /> */}
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
         <BtnTop />
         <ContainerAgentes>
           <TitleAgentes>Agentes</TitleAgentes>

@@ -11,6 +11,7 @@ import Footer from "./Components/Footer/Footer.js";
 
 const App = () => {
   return (
+<<<<<<< HEAD
     <BrowserRouter>
       <Header />
       <div>
@@ -24,6 +25,22 @@ const App = () => {
       </div>
       <Footer />
     </BrowserRouter>
+=======
+    <div className="App">
+      <BrowserRouter>
+        <Header />
+        <main className="AppBody">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/agentes" element={<Agentes />} />
+            <Route path="/arsenal" element={<Armas />} />
+            <Route path="/mapas" element={<Mapas />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </div>
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
   );
 };
 

@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
 import Loading from "../Helpers/Loading";
 import ImageSkeleton from "../Helpers/Skeleton";
 import {
@@ -50,6 +53,10 @@ const Mapas = () => {
   if (AllMaps)
     return (
       <>
+<<<<<<< HEAD
+=======
+        {/* <Header /> */}
+>>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
         <MapasMain
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
