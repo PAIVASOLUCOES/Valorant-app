@@ -7,7 +7,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   width: 100%;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   &.online {
     position: fixed;
     bottom: 0;

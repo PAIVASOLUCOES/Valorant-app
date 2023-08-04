@@ -25,13 +25,15 @@ const Header = () => {
     setMenuMobile(!menuMobile);
   }
 
-  const currentURL = window.location.pathname;
-  const allLinks = [
-    { path: "/", text: "home" },
-    { path: "/agentes", text: "agentes" },
-    { path: "/arsenal", text: "arsenal" },
-    { path: "/mapas", text: "mapas" },
-  ];
+  // const currentURL = window.location.pathname;
+
+  // const allLinks = [
+  //   { path: "/", text: "home" },
+  //   { path: "/agentes", text: "agentes" },
+  //   { path: "/arsenal", text: "arsenal" },
+  //   { path: "/mapas", text: "mapas" },
+  // ];
+
   const WidthScreen = UseWidthHook();
 
   return (
@@ -44,15 +46,21 @@ const Header = () => {
 
         {WidthScreen >= 768 ? (
           <ContainerLinks>
-            {allLinks.map((link) =>
-              link.path !== currentURL ? (
-                <StyledLink to={link.path} key={link.path}>
-                  <SpanAbout>{link.text}</SpanAbout>
-                </StyledLink>
-              ) : (
-                ""
-              )
-            )}
+            <StyledLink to='/'>
+              <SpanAbout>Home</SpanAbout>
+            </StyledLink>
+
+            <StyledLink to='/agentes'>
+              <SpanAbout>Agentes</SpanAbout>
+            </StyledLink>
+
+            <StyledLink to='/arsenal'>
+              <SpanAbout>Arsenal</SpanAbout>
+            </StyledLink>
+
+            <StyledLink to='/mapas'>
+              <SpanAbout>Mapas</SpanAbout>
+            </StyledLink>
           </ContainerLinks>
         ) : (
           <>

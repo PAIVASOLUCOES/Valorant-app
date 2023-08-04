@@ -1,5 +1,4 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+
 
 import {
   ArsenalMain,
@@ -34,7 +33,7 @@ const Armas = () => {
   return (
     <>
       <BtnTop />
-      <Header />
+      {/* <Header /> */}
       <ArsenalMain>
         <TitleArsenal>Arsenal</TitleArsenal>
         <GunsContainer>
@@ -74,7 +73,7 @@ const Armas = () => {
           ""
         )}
       </ArsenalMain>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

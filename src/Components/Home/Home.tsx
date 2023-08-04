@@ -1,5 +1,4 @@
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+
 import {
   Backgrounds,
   BtnMain,
@@ -18,7 +17,7 @@ import iconValorant from "../../assets/logo.svg";
 const Home = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <ContainerBackGrounds>
         <Backgrounds src={ImgBack} />
       </ContainerBackGrounds>
@@ -56,8 +55,6 @@ const Home = () => {
           </ContainerLeft>
         </ContainerItens>
       </MediaContainer>
-
-      <Footer className="online" />
     </>
   );
 };
