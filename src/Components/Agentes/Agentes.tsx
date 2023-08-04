@@ -1,6 +1,3 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-
 import {
   BtnMore,
   Card,
@@ -34,7 +31,6 @@ const Agentes = () => {
   if (AllAgents !== undefined) {
     return (
       <>
-        <Header />
         <BtnTop />
         <ContainerAgentes>
           <TitleAgentes>Agentes</TitleAgentes>
@@ -62,7 +58,6 @@ const Agentes = () => {
             ""
           )}
         </ContainerAgentes>
-        <Footer />
       </>
     );
   }

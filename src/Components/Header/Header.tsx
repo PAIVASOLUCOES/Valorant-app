@@ -17,7 +17,6 @@ import logoMenu from "../../assets/menu_FILL0_wght400_GRAD0_opsz48.svg";
 
 import DropdownMenu from "./DropdownMenu";
 import UseWidthHook from "../Hooks/Resize";
-
 const Header = () => {
   const [menuMobile, setMenuMobile] = useState<boolean>(false);
 
@@ -25,13 +24,6 @@ const Header = () => {
     setMenuMobile(!menuMobile);
   }
 
-  const currentURL = window.location.pathname;
-  const allLinks = [
-    { path: "/", text: "home" },
-    { path: "/agentes", text: "agentes" },
-    { path: "/arsenal", text: "arsenal" },
-    { path: "/mapas", text: "mapas" },
-  ];
   const WidthScreen = UseWidthHook();
 
   return (
@@ -44,15 +36,18 @@ const Header = () => {
 
         {WidthScreen >= 768 ? (
           <ContainerLinks>
-            {allLinks.map((link) =>
-              link.path !== currentURL ? (
-                <StyledLink to={link.path} key={link.path}>
-                  <SpanAbout>{link.text}</SpanAbout>
-                </StyledLink>
-              ) : (
-                ""
-              )
-            )}
+            <StyledLink to={"/"}>
+              <SpanAbout>Home</SpanAbout>
+            </StyledLink>
+            <StyledLink to={"/agentes"}>
+              <SpanAbout>Agentes</SpanAbout>
+            </StyledLink>
+            <StyledLink to={"/arsenal"}>
+              <SpanAbout>Armas</SpanAbout>
+            </StyledLink>
+            <StyledLink to={"/mapas"}>
+              <SpanAbout>Armas</SpanAbout>
+            </StyledLink>
           </ContainerLinks>
         ) : (
           <>

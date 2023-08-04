@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+
 import Loading from "../Helpers/Loading";
 import ImageSkeleton from "../Helpers/Skeleton";
 import {
@@ -51,7 +50,6 @@ const Mapas = () => {
   if (AllMaps)
     return (
       <>
-        <Header />
         <MapasMain
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -70,7 +68,6 @@ const Mapas = () => {
             })}
           </ContainerAllMaps>
         </MapasMain>
-        <Footer className="online" />
       </>
     );
 

@@ -74,13 +74,6 @@ export const LogoCenter = styled.div`
   width: 90%;
 `;
 
-const currentURL = window.location.pathname;
-const allLinks = [
-  { path: "/", text: "home" },
-  { path: "/agentes", text: "agentes" },
-  { path: "/arsenal", text: "arsenal" },
-  { path: "/mapas", text: "mapas" },
-];
 const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
   function handleMenuMobile() {
     setMenuMobile(!menuMobile);
@@ -96,15 +89,18 @@ const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
         </LogoCenter>
       </ContainerLogo>
       <Dropdown>
-        {allLinks.map((link) =>
-          link.path !== currentURL ? (
-            <StyledLink to={link.path} key={link.path}>
-              <SpanAbout>{link.text}</SpanAbout>
-            </StyledLink>
-          ) : (
-            ""
-          )
-        )}
+        <StyledLink to={"/"}>
+          <SpanAbout>Home</SpanAbout>
+        </StyledLink>
+        <StyledLink to={"/agentes"}>
+          <SpanAbout>Agentes</SpanAbout>
+        </StyledLink>
+        <StyledLink to={"/arsenal"}>
+          <SpanAbout>Armas</SpanAbout>
+        </StyledLink>
+        <StyledLink to={"/mapas"}>
+          <SpanAbout>Armas</SpanAbout>
+        </StyledLink>
       </Dropdown>
       <Footer className={menuMobile ? "Active" : ""} />
     </DropdownContainer>
