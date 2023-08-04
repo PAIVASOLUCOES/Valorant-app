@@ -73,16 +73,6 @@ export const LogoCenter = styled.div`
   width: 90%;
 `;
 
-<<<<<<< HEAD
-=======
-// const currentURL = window.location.pathname;
-// const allLinks = [
-//   { path: "/", text: "home" },
-//   { path: "/agentes", text: "agentes" },
-//   { path: "/arsenal", text: "arsenal" },
-//   { path: "/mapas", text: "mapas" },
-// ];
->>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
 const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
   function handleMenuMobile() {
     setMenuMobile(!menuMobile);
@@ -98,7 +88,6 @@ const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
         </LogoCenter>
       </ContainerLogo>
       <Dropdown>
-<<<<<<< HEAD
         <StyledLink to={"/"}>
           <SpanAbout>Home</SpanAbout>
         </StyledLink>
@@ -110,25 +99,8 @@ const DropdownMenu = ({ menuMobile, setMenuMobile }: TypeMenu) => {
         </StyledLink>
         <StyledLink to={"/mapas"}>
           <SpanAbout>Armas</SpanAbout>
-=======
-        <StyledLink to='/'>
-          <SpanAbout>Home</SpanAbout>
-        </StyledLink>
-
-        <StyledLink to='/agentes' onClick={handleMenuMobile}>
-          <SpanAbout>Agentes</SpanAbout>
-        </StyledLink>
-
-        <StyledLink to='/arsenal' onClick={handleMenuMobile}>
-          <SpanAbout>Arsenal</SpanAbout>
-        </StyledLink>
-
-        <StyledLink to='/mapas' onClick={handleMenuMobile}>
-          <SpanAbout>Mapas</SpanAbout>
->>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
         </StyledLink>
       </Dropdown>
-      {/* <Footer className={menuMobile ? "Active" : ""} /> */}
     </DropdownContainer>
   );
 };

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
 import {
   ArsenalMain,
   BtnSaibaMais,
@@ -36,10 +31,6 @@ const Armas = () => {
   return (
     <>
       <BtnTop />
-<<<<<<< HEAD
-=======
-      {/* <Header /> */}
->>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
       <ArsenalMain>
         <TitleArsenal>Arsenal</TitleArsenal>
         <GunsContainer>
@@ -79,10 +70,6 @@ const Armas = () => {
           ""
         )}
       </ArsenalMain>
-<<<<<<< HEAD
-=======
-      {/* <Footer /> */}
->>>>>>> 6b5219f33754805b3d2169c0d59bff7036049c13
     </>
   );
 };
